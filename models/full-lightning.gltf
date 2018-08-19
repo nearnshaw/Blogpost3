@@ -1,0 +1,1067 @@
+{
+    "accessors": [
+        {
+            "bufferView": 13,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 135,
+            "max": [
+                0.9957183599472046,
+                0.9873194694519043,
+                0.7728019952774048
+            ],
+            "min": [
+                -0.885286271572113,
+                -0.9029562473297119,
+                -0.8598693609237671
+            ],
+            "name": "accessor_buffer_lightning_bolt.004_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 10,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 135,
+            "max": [
+                0.9861000180244446,
+                0.9809000007808208
+            ],
+            "min": [
+                0.13519999384880066,
+                0.020500004291534424
+            ],
+            "name": "accessor_buffer_lightning_bolt.003_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 175,
+            "max": [
+                0.9847999811172485,
+                0.9809000007808208
+            ],
+            "min": [
+                0.04410000145435333,
+                0.014900028705596924
+            ],
+            "name": "accessor_buffer_lightning_bolt.002_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 24,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 75,
+            "max": [
+                -0.05408800020813942,
+                0.3364900052547455,
+                0.04057899862527847
+            ],
+            "min": [
+                -0.1846420019865036,
+                0.003396000014618039,
+                -0.6244360208511353
+            ],
+            "name": "accessor_buffer_lightning_bolt.007_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 27,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 105,
+            "max": [
+                74
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_lightning_bolt.007_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 115,
+            "max": [
+                -0.17924800515174866,
+                0.25817200541496277,
+                -0.15225200355052948
+            ],
+            "min": [
+                -1.1696319580078125,
+                0.08358500152826309,
+                -0.659246027469635
+            ],
+            "name": "accessor_buffer_lightning_bolt_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 17,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 115,
+            "max": [
+                0.9905638694763184,
+                0.9766730070114136,
+                0.6698670983314514
+            ],
+            "min": [
+                -0.8640365600585938,
+                -0.9308344721794128,
+                -0.761399507522583
+            ],
+            "name": "accessor_buffer_lightning_bolt.005_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 175,
+            "max": [
+                0.6986939907073975,
+                0.14202000200748444,
+                0.8674049973487854
+            ],
+            "min": [
+                -0.0967859998345375,
+                -0.11033099889755249,
+                -0.9244449734687805
+            ],
+            "name": "accessor_buffer_lightning_bolt.002_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 165,
+            "max": [
+                114
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_lightning_bolt_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 12,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 135,
+            "max": [
+                0.1496489942073822,
+                0.12920799851417542,
+                0.121069997549057
+            ],
+            "min": [
+                -0.24473699927330017,
+                -0.27291300892829895,
+                -1.3549929857254028
+            ],
+            "name": "accessor_buffer_lightning_bolt.004_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 255,
+            "max": [
+                174
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_lightning_bolt.002_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 175,
+            "max": [
+                0.9914628267288208,
+                0.990665853023529,
+                0.7813616394996643
+            ],
+            "min": [
+                -0.9130062460899353,
+                -0.8980961441993713,
+                -0.6831281781196594
+            ],
+            "name": "accessor_buffer_lightning_bolt.002_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 22,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 155,
+            "max": [
+                0.9782999753952026,
+                0.9809000007808208
+            ],
+            "min": [
+                0.08910000324249268,
+                0.014900028705596924
+            ],
+            "name": "accessor_buffer_lightning_bolt.006_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 19,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 165,
+            "max": [
+                114
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_lightning_bolt.005_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 16,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 115,
+            "max": [
+                0.2608320116996765,
+                -0.051201000809669495,
+                -0.1260949969291687
+            ],
+            "min": [
+                -0.24473799765110016,
+                -0.3109320104122162,
+                -1.519394040107727
+            ],
+            "name": "accessor_buffer_lightning_bolt.005_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 25,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 75,
+            "max": [
+                0.9525764584541321,
+                0.9996240735054016,
+                0.8716973662376404
+            ],
+            "min": [
+                -0.9502864480018616,
+                -0.811107873916626,
+                -0.8244335651397705
+            ],
+            "name": "accessor_buffer_lightning_bolt.007_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 115,
+            "max": [
+                0.9825999736785889,
+                0.9809000007808208
+            ],
+            "min": [
+                0.019099999219179153,
+                0.01380002498626709
+            ],
+            "name": "accessor_buffer_lightning_bolt_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 23,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 225,
+            "max": [
+                154
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_lightning_bolt.006_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 9,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 135,
+            "max": [
+                0.950414776802063,
+                0.9934322834014893,
+                0.764868974685669
+            ],
+            "min": [
+                -0.9589763283729553,
+                -0.8513692021369934,
+                -0.8148787021636963
+            ],
+            "name": "accessor_buffer_lightning_bolt.003_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 115,
+            "max": [
+                0.9031375646591187,
+                0.9454593658447266,
+                0.8561529517173767
+            ],
+            "min": [
+                -0.896747350692749,
+                -0.9351081848144531,
+                -0.9959497451782227
+            ],
+            "name": "accessor_buffer_lightning_bolt_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 11,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 195,
+            "max": [
+                134
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_lightning_bolt.003_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 21,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 155,
+            "max": [
+                0.9675667881965637,
+                0.9951260089874268,
+                0.8341255784034729
+            ],
+            "min": [
+                -0.9207619428634644,
+                -0.8764251470565796,
+                -0.6750576496124268
+            ],
+            "name": "accessor_buffer_lightning_bolt.006_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 20,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 155,
+            "max": [
+                0.0025730000343173742,
+                0.33965298533439636,
+                0.5702810287475586
+            ],
+            "min": [
+                -0.3249489963054657,
+                -0.03000199981033802,
+                -1.0127029418945312
+            ],
+            "name": "accessor_buffer_lightning_bolt.006_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 14,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 135,
+            "max": [
+                0.9757000207901001,
+                0.9809000007808208
+            ],
+            "min": [
+                0.18479999899864197,
+                0.03530001640319824
+            ],
+            "name": "accessor_buffer_lightning_bolt.004_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 26,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 75,
+            "max": [
+                0.960099995136261,
+                0.9809000007808208
+            ],
+            "min": [
+                0.019099999219179153,
+                0.014199972152709961
+            ],
+            "name": "accessor_buffer_lightning_bolt.007_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 15,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 195,
+            "max": [
+                134
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_lightning_bolt.004_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 8,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 135,
+            "max": [
+                0.03850699961185455,
+                0.06421799957752228,
+                0.3007729947566986
+            ],
+            "min": [
+                -0.10688699781894684,
+                -0.6162959933280945,
+                -0.8936439752578735
+            ],
+            "name": "accessor_buffer_lightning_bolt.003_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 18,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 115,
+            "max": [
+                0.9848999977111816,
+                0.8675999939441681
+            ],
+            "min": [
+                0.045499999076128006,
+                0.015500009059906006
+            ],
+            "name": "accessor_buffer_lightning_bolt.005_TEXCOORD_0_0",
+            "type": "VEC2"
+        }
+    ],
+    "asset": {
+        "copyright": "",
+        "generator": "blendergltf v1.2.0",
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 1380,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1380,
+            "byteOffset": 1380,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 920,
+            "byteOffset": 2760,
+            "byteStride": 8,
+            "name": "bufferView_buffer_lightning_bolt_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 332,
+            "byteOffset": 3680,
+            "name": "bufferView_buffer_lightning_bolt_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2100,
+            "byteOffset": 4012,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.002_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2100,
+            "byteOffset": 6112,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.002_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1400,
+            "byteOffset": 8212,
+            "byteStride": 8,
+            "name": "bufferView_buffer_lightning_bolt.002_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 512,
+            "byteOffset": 9612,
+            "name": "bufferView_buffer_lightning_bolt.002_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1620,
+            "byteOffset": 10124,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.003_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1620,
+            "byteOffset": 11744,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.003_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1080,
+            "byteOffset": 13364,
+            "byteStride": 8,
+            "name": "bufferView_buffer_lightning_bolt.003_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 392,
+            "byteOffset": 14444,
+            "name": "bufferView_buffer_lightning_bolt.003_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1620,
+            "byteOffset": 14836,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.004_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1620,
+            "byteOffset": 16456,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.004_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1080,
+            "byteOffset": 18076,
+            "byteStride": 8,
+            "name": "bufferView_buffer_lightning_bolt.004_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 392,
+            "byteOffset": 19156,
+            "name": "bufferView_buffer_lightning_bolt.004_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1380,
+            "byteOffset": 19548,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.005_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1380,
+            "byteOffset": 20928,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.005_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 920,
+            "byteOffset": 22308,
+            "byteStride": 8,
+            "name": "bufferView_buffer_lightning_bolt.005_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 332,
+            "byteOffset": 23228,
+            "name": "bufferView_buffer_lightning_bolt.005_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1860,
+            "byteOffset": 23560,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.006_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1860,
+            "byteOffset": 25420,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.006_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1240,
+            "byteOffset": 27280,
+            "byteStride": 8,
+            "name": "bufferView_buffer_lightning_bolt.006_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 452,
+            "byteOffset": 28520,
+            "name": "bufferView_buffer_lightning_bolt.006_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 900,
+            "byteOffset": 28972,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.007_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 900,
+            "byteOffset": 29872,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.007_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 600,
+            "byteOffset": 30772,
+            "byteStride": 8,
+            "name": "bufferView_buffer_lightning_bolt.007_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 212,
+            "byteOffset": 31372,
+            "name": "bufferView_buffer_lightning_bolt.007_0",
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 31584,
+            "name": "buffer_full-lightning",
+            "uri": "buffer_full-lightning.bin"
+        }
+    ],
+    "cameras": [
+        {
+            "name": "Camera",
+            "perspective": {
+                "aspectRatio": 1.703595982340029,
+                "yfov": 0.5033799409866333,
+                "zfar": 100.0,
+                "znear": 0.10000000149011612
+            },
+            "type": "perspective"
+        }
+    ],
+    "images": [
+        {
+            "name": "PUSHILIN_lightning_bolt.png",
+            "uri": "PUSHILIN_lightning_bolt.png"
+        }
+    ],
+    "materials": [
+        {
+            "alphaMode": "BLEND",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "None",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "lightning_bolt",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 19,
+                        "POSITION": 5,
+                        "TEXCOORD_0": 16
+                    },
+                    "indices": 8,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "lightning_bolt.002",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 11,
+                        "POSITION": 7,
+                        "TEXCOORD_0": 2
+                    },
+                    "indices": 10,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "lightning_bolt.003",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 18,
+                        "POSITION": 26,
+                        "TEXCOORD_0": 1
+                    },
+                    "indices": 20,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "lightning_bolt.004",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 0,
+                        "POSITION": 9,
+                        "TEXCOORD_0": 23
+                    },
+                    "indices": 25,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "lightning_bolt.005",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 14,
+                        "TEXCOORD_0": 27
+                    },
+                    "indices": 13,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "lightning_bolt.006",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 21,
+                        "POSITION": 22,
+                        "TEXCOORD_0": 12
+                    },
+                    "indices": 17,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "lightning_bolt.007",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 15,
+                        "POSITION": 3,
+                        "TEXCOORD_0": 24
+                    },
+                    "indices": 4,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "camera": 0,
+            "name": "Camera",
+            "rotation": [
+                -0.09062843769788742,
+                -0.8937962651252747,
+                -0.2099730223417282,
+                0.38578000664711
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                -7.481131553649902,
+                5.34366512298584,
+                -6.5076398849487305
+            ]
+        },
+        {
+            "name": "Lamp",
+            "rotation": [
+                -0.34203386306762695,
+                -0.5232755541801453,
+                -0.2841663062572479,
+                0.7269423007965088
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9999999403953552
+            ],
+            "translation": [
+                -4.076245307922363,
+                5.903861999511719,
+                1.0054539442062378
+            ]
+        },
+        {
+            "mesh": 0,
+            "name": "lightning_bolt",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "mesh": 1,
+            "name": "lightning_bolt.002",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "mesh": 2,
+            "name": "lightning_bolt.003",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "mesh": 3,
+            "name": "lightning_bolt.004",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "mesh": 4,
+            "name": "lightning_bolt.005",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "mesh": 5,
+            "name": "lightning_bolt.006",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "mesh": 6,
+            "name": "lightning_bolt.007",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "name": "Kd",
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "active_camera": 0,
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                8,
+                7,
+                6,
+                5,
+                4,
+                3,
+                2,
+                1,
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "name": "Kd",
+            "sampler": 0,
+            "source": 0
+        }
+    ]
+}

@@ -4,9 +4,9 @@
       "bufferView": 0,
       "byteOffset": 0,
       "componentType": 5123,
-      "count": 1680,
+      "count": 6141,
       "max": [
-        1679.0
+        6140.0
       ],
       "min": [
         0.0
@@ -18,34 +18,34 @@
       "bufferView": 2,
       "byteOffset": 0,
       "componentType": 5126,
-      "count": 1680,
+      "count": 6141,
       "max": [
-        273.9071960449219,
-        47.59990692138672,
-        324.86541748046875
+        12.670553207397461,
+        18.42892074584961,
+        9.56132698059082
       ],
       "min": [
-        -305.30841064453125,
-        -118.08362579345703,
-        0.0
+        -12.670553207397461,
+        0.0,
+        -9.561326026916504
       ],
       "name": "buffer-0-accessor-position-buffer-0-mesh-0",
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 20160,
+      "byteOffset": 73692,
       "componentType": 5126,
-      "count": 1680,
+      "count": 6141,
       "max": [
-        0.62083500623703,
-        0.989762008190155,
-        0.9789869785308838
+        1.0,
+        1.0,
+        1.0
       ],
       "min": [
-        -0.62083500623703,
-        -0.989762008190155,
-        -0.9789869785308838
+        -1.0,
+        -1.0,
+        -1.0
       ],
       "name": "buffer-0-accessor-normal-buffer-0-mesh-0",
       "type": "VEC3"
@@ -54,14 +54,14 @@
       "bufferView": 1,
       "byteOffset": 0,
       "componentType": 5126,
-      "count": 1680,
+      "count": 6141,
       "max": [
-        1.0,
+        0.9794970154762268,
         0.0
       ],
       "min": [
         0.0,
-        -1.0
+        -0.996025025844574
       ],
       "name": "buffer-0-accessor-texcoord-buffer-0-mesh-0",
       "type": "VEC2"
@@ -94,7 +94,7 @@
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 3360,
+      "byteLength": 12282,
       "byteOffset": 0,
       "byteStride": 0,
       "name": "buffer-0-bufferview-ushort",
@@ -102,16 +102,16 @@
     },
     {
       "buffer": 0,
-      "byteLength": 13440,
-      "byteOffset": 3360,
+      "byteLength": 49128,
+      "byteOffset": 12288,
       "byteStride": 8,
       "name": "buffer-0-bufferview-vec2",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 40320,
-      "byteOffset": 16800,
+      "byteLength": 147384,
+      "byteOffset": 61416,
       "byteStride": 12,
       "name": "buffer-0-bufferview-vec3",
       "target": 34962
@@ -119,7 +119,7 @@
     {
       "buffer": 0,
       "byteLength": 0,
-      "byteOffset": 57120,
+      "byteOffset": 208800,
       "byteStride": 16,
       "name": "buffer-0-bufferview-vec4",
       "target": 34962
@@ -127,16 +127,23 @@
   ],
   "buffers": [
     {
-      "byteLength": 57120,
+      "byteLength": 208800,
       "name": "buffer-0",
-      "uri": "Cloud_01.bin"
+      "uri": "FarmHouse.bin"
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/png",
+      "name": "FarmHouse_Mat-image",
+      "uri": "FarmHouse_BaseColor.png"
     }
   ],
   "materials": [
     {
       "alphaMode": "OPAQUE",
       "doubleSided": true,
-      "name": "blinn6SG",
+      "name": "FarmHouse_Mat",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -144,6 +151,10 @@
           1.0,
           1.0
         ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
         "metallicFactor": 0.0,
         "roughnessFactor": 0.9699476628648295
       }
@@ -172,12 +183,26 @@
       "name": "node-0"
     }
   ],
+  "samplers": [
+    {
+      "name": "FarmHouse_Mat-sampler",
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
   "scenes": [
     {
       "name": "scene-0",
       "nodes": [
         0
       ]
+    }
+  ],
+  "textures": [
+    {
+      "name": "FarmHouse_Mat-texture",
+      "sampler": 0,
+      "source": 0
     }
   ]
 }

@@ -2,7 +2,7 @@ import * as DCL from 'metaverse-api'
 import { Vector3Component } from 'metaverse-api';
 const axios = require('axios');
 
-
+const fakeWeather: string = " snow"
 
 const appId : string = "bb6063b3"
 const APIkey : string = "2e55a43d3e62d76f145f28aa7e3990e9"
@@ -11,6 +11,9 @@ const lon: string = "-58.46"
 
 
 let objectCounter: number = 0
+//let lightningNum: number = 0
+const dropSpeed: number = 3000
+const flakeSpeed: number = dropSpeed*4
 
 const callUrl : string = "http://api.weatherunlocked.com/api/current/" + lat + ",%20" + lon + "?app_id=" + appId + "&app_key=" + APIkey
 
@@ -27,17 +30,23 @@ export type Drops = {
   [key: string]: Vector3Component
 }
 
+export type Flakes = {
+  [key: string]: [Vector3Component, Vector3Component]
+} 
+
 // This is an interface, you can use it to enforce the types of your state
 export interface IState {
  weather: Weather
  drops: Drops
+ flakes: Flakes
 }
 
 export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   // This is your initial state and it respects the given IState interface
   state = {
     weather: Weather.sun,
-    drops: {"a": {x:2, y:2, z:2}} as any,
+    drops: {} as any,       ////   WHYYYY the as any?????    implicitly of type any
+    flakes: {} as any,
   }
 
   sceneDidMount() {
@@ -50,10 +59,12 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
       axios.get(callUrl)
       .then( (response:any) => {
         console.log(response.data.wx_desc)
-        let weth = "rain"
-        this.mapWeather(weth)
-        //this.mapWeather(response.data.wx_desc)
-        
+        if (fakeWeather){
+          this.mapWeather(fakeWeather)}
+        else{
+          this.mapWeather(response.data.wx_desc)
+        }
+ 
       })
       .catch( (error:any) => {
         console.log(error)
@@ -63,17 +74,18 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   mapWeather(weather: string){
   
     let simpleWeather: Weather
-    if ( weather.match(/(thunder)/gi) ){
+    if ( weather.match(/(thunder)/gi) ){       //// can we do this neater w/out so many ifs?
       simpleWeather = Weather.storm;
-      this.startRain(15)
+      this.startRain(100)
     } else if (weather.match(/(snow|ice)/gi) ){
       simpleWeather = Weather.snow
+      this.startFlakes(500)
     } else if (weather.match(/(heavy|torrential)/gi) ){
       simpleWeather = Weather.heavyRain
       this.startRain(50)
     } else if (weather.match(/(rain|drizzle|shower)/gi) ){
       simpleWeather = Weather.rain
-      this.startRain(15)
+      this.startRain(500)
     } else if (weather.match(/(cloud|overcast|fog|mist)/gi) ){
       simpleWeather = Weather.clouds
     } else {
@@ -85,102 +97,184 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     console.log(this.state.weather)  
   }
 
-  startRain(dropsToAdd: number){
-   let dropsAdded: Drops = {}
-    // while (dropsAdded.length < dropsToAdd)
-    // {
-    //   dropsAdded.push( {
-    //     x: (Math.random() *10 ),
-    //     y:  10,
-    //     z: (Math.random() *10 ) 
-    //    } )
-    // }
-    this.setState({drops: this.addDrop() })
-
-    
+  startRain(interval: number){
+    setInterval( f =>{
+      this.addDrop()
+      }, interval)  
   }
 
-  addDrop(){
-    let dropsAdded: Drops = {}
+  async addDrop(){
     let newDrop: Vector3Component = {
       x: (Math.random() *10 ),
-      y:  1,
+      y:  9,
       z: (Math.random() *10 ) 
      } 
-     dropsAdded["drop"  + objectCounter++ ] = newDrop
-    //this.setState({drops: [...this.state.drops, newDrop] })
-    //while (this.state.weather == Weather.rain){
-    return dropsAdded
+    const dropName = "drop"  + objectCounter++
+    let dropsAdded: Drops = Object.create(this.state.drops)
+    dropsAdded[dropName] = newDrop
+    this.setState({drops: dropsAdded })
+    setTimeout(f => {
+      dropsAdded = Object.create(this.state.drops)
+      dropsAdded[dropName].y = -1
+      this.setState({drops: dropsAdded })
+      },10)
+    setTimeout(f => {
+      dropsAdded = Object.create(this.state.drops)
+      delete dropsAdded.dropName    
+      this.setState({drops: dropsAdded })
+      console.log("deleted" + dropName )
+      }, dropSpeed)
 
   }
   
+  startFlakes(interval: number){
+    setInterval( f =>{
+      this.addFlake()
+      }, interval)  
+  }
 
-  renderWeather(){
+  async addFlake(){
+    let newFlake: Vector3Component = {
+      x: (Math.random() *10 ),
+      y:  9,
+      z: (Math.random() *10 ) 
+     } 
+    const flakeName = "flake"  + objectCounter++
+    let flakesAdded: Flakes = Object.create(this.state.flakes)
+    flakesAdded[flakeName] = [newFlake, newFlake]   //pos and rotation
+    this.setState({flakes: flakesAdded })
+    setTimeout(f => {
+      let flakesAdded = Object.create(this.state.flakes)
+      flakesAdded[flakeName][0].y = -1
+      flakesAdded[flakeName][1] = {
+        x: (Math.random() *360 ),
+        y: (Math.random() *360 ),
+        z: (Math.random() *360 ) 
+       }  
+      this.setState({flakes: flakesAdded })
+      },10)
+    setTimeout(f => {
+      flakesAdded = Object.create(this.state.flakes)
+      delete flakesAdded.flakeName    
+      this.setState({flakes: flakesAdded })
+      console.log("deleted" + flakeName )
+      }, flakeSpeed)
+
+  }
+  pickWeather(){
     switch(this.state.weather){
       case Weather.sun:
         return
       case Weather.clouds:
-        return this.renderClouds()
+        return this.renderClouds("white")
       case Weather.rain:
-        return this.renderDrops()
+        return this.renderDrops("white")
       case Weather.heavyRain:  
-        return this.renderDrops()
+        return this.renderDrops("dark")
       case Weather.snow:
-        return
+      return this.renderFlakes("dark")
       case Weather.storm:
-        return this.renderDrops()
+        return this.renderDrops("dark")
     }
 
   }
 
-  renderClouds(){
-    return <gltf-model 
-    src = "models/clouds/clouds.gltf"
-    position={{ x:4, y:3, z:-4}}
-    scale={3}
-    />
+  renderClouds(cloudType:string){
+    switch (cloudType)
+    {
+      case "dark":
+        let lightningNum = Math.floor(Math.random()*6)
+        //lightningNum =+  Math.floor( (Math.random()*2 ) -1)
+        //lightningNum % 5
+        return (
+        <entity 
+          position={{ x:5, y:8, z:5}}
+          scale={4}
+          >
+          <gltf-model 
+          src = {"models/dark-cloud.gltf"}
+          />
+          <gltf-model 
+          src = {"models/ln" + lightningNum + ".gltf"}
+          />
+        </entity>
+        )
+      case "white":
+        return <gltf-model 
+        src = {"models/clouds/clouds.gltf"}
+        position={{ x:9, y:4, z:1}}
+        scale={3}
+        />
+    }
+   
+    
   }
 
-  renderDrops()
+  renderDrops(cloudType:string)
   {
+    let dropModels: any[] = []
     for (var drop in this.state.drops){
-      console.log(
+      //console.log("rendering drop " + drop)
+      dropModels.push(
       <gltf-model
         src="models/raindrop.gltf"
         position= {this.state.drops[drop]}
         key= {drop}
+        scale={2}
         transition={{
-          position: { duration: 500}
+          position: { duration: dropSpeed, timing:"linear"}
         }}
       />)
     }
-    // for (var droplet in this.state.drops){
-    //   <gltf-model
-    //     src="models/raindrop.gltf"
-    //     position= {this.state.drops[drop]}
-    //     key= {drop}
-    //     transition={{
-    //       position: { duration: 500}
-    //     }}
-    //   />
-    // }
-    //  this.state.drops.map( (dropPos, dropNum) =>
-    //   <gltf-model
-    //     src="models/raindrop.gltf"
-    //     position={{dropPos[dropNum]}}
-    //     key= {"drop" + dropNum}
-    //     transition={{
-    //       position: { duration: 500}
-    //     }}
-    //   />
-    // )
+    return (
+      <entity>
+         {this.renderClouds(cloudType)}
+         {dropModels}
+      </entity>
+      )
   }
   
+  renderFlakes(cloudType:string)
+  {
+    let flakeModels: any[] = []
+    for (var flake in this.state.flakes){
+      //console.log("rendering drop " + drop)
+      flakeModels.push(
+      <gltf-model
+        src="models/flake.gltf"
+        position= {this.state.flakes[flake][0]}
+        rotation={this.state.flakes[flake][1]}
+        key= {flake}
+        scale={1}
+        transition={{
+          position: { duration: flakeSpeed, timing:"linear"},
+          rotation: { duration: flakeSpeed, timing:"linear"}
+        }}
+      />)
+    }
+    return (
+      <entity>
+         {this.renderClouds(cloudType)}
+         {flakeModels}
+      </entity>
+      )
+  }
 
   async render() {
     return (
-      <scene position={{ x: 5, y: 0, z: 5 }}>
-        {this.renderWeather()}
+      <scene>
+        {this.pickWeather()}
+        <gltf-model
+          src="models/House.gltf"
+          scale={0.04}
+          position={{x:0, y:0, z:5}}
+        />
+        <plane 
+          scale={9.9}
+          rotation={{x:90, y:0, z:0}}
+          position={{x:5, y:0, z:5}}
+          color="#3e543e"
+        />
       </scene>
       
     )

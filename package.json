@@ -11,5 +11,9 @@
   "license": "MIT",
   "devDependencies": {
     "metaverse-api": "latest"
+  },
+  "dependencies": {
+    "ajv": "^6.5.3",
+    "axios": "^0.18.0"
   }
 }
