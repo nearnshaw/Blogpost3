@@ -2,7 +2,7 @@ import * as DCL from 'metaverse-api'
 import { Vector3Component } from 'metaverse-api';
 const axios = require('axios');
 
-const fakeWeather: string = " snow"
+const fakeWeather: string = "storm thunder"
 
 const appId : string = "bb6063b3"
 const APIkey : string = "2e55a43d3e62d76f145f28aa7e3990e9"
@@ -134,14 +134,19 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   }
 
   async addFlake(){
-    let newFlake: Vector3Component = {
+    let newFlakePos: Vector3Component = {
       x: (Math.random() *10 ),
       y:  9,
       z: (Math.random() *10 ) 
      } 
+    let newFlakeRot: Vector3Component = {
+      x: (Math.random() *360 ),
+      y: (Math.random() *360 ),
+      z: (Math.random() *360 ) 
+     } 
     const flakeName = "flake"  + objectCounter++
     let flakesAdded: Flakes = Object.create(this.state.flakes)
-    flakesAdded[flakeName] = [newFlake, newFlake]   //pos and rotation
+    flakesAdded[flakeName] = [newFlakePos, newFlakeRot]   //pos and rotation
     this.setState({flakes: flakesAdded })
     setTimeout(f => {
       let flakesAdded = Object.create(this.state.flakes)
@@ -161,20 +166,41 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
       }, flakeSpeed)
 
   }
-  pickWeather(){
+  renderWeather(){
     switch(this.state.weather){
       case Weather.sun:
         return
       case Weather.clouds:
         return this.renderClouds("white")
       case Weather.rain:
-        return this.renderDrops("white")
+        return (
+          <entity>
+             {this.renderClouds("white")}
+             {this.renderDrops()}
+          </entity>
+          ) 
       case Weather.heavyRain:  
-        return this.renderDrops("dark")
+        return (
+          <entity>
+             {this.renderClouds("dark")}
+             {this.renderDrops()}
+          </entity>
+          ) 
       case Weather.snow:
-      return this.renderFlakes("dark")
+      return (
+        <entity>
+           {this.renderClouds("dark")}
+           {this.renderFlakes()}
+        </entity>
+        ) 
       case Weather.storm:
-        return this.renderDrops("dark")
+        return (
+          <entity>
+             {this.renderClouds("dark")}
+             {this.renderDrops()}
+             {this.renderLightNing()}
+          </entity>
+          ) 
     }
 
   }
@@ -182,22 +208,13 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   renderClouds(cloudType:string){
     switch (cloudType)
     {
-      case "dark":
-        let lightningNum = Math.floor(Math.random()*6)
-        //lightningNum =+  Math.floor( (Math.random()*2 ) -1)
-        //lightningNum % 5
+      case "dark":  
         return (
-        <entity 
-          position={{ x:5, y:8, z:5}}
-          scale={4}
-          >
           <gltf-model 
           src = {"models/dark-cloud.gltf"}
+          position={{ x:5, y:8, z:5}}
+          scale={4}
           />
-          <gltf-model 
-          src = {"models/ln" + lightningNum + ".gltf"}
-          />
-        </entity>
         )
       case "white":
         return <gltf-model 
@@ -205,12 +222,10 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
         position={{ x:9, y:4, z:1}}
         scale={3}
         />
-    }
-   
-    
+    }   
   }
 
-  renderDrops(cloudType:string)
+  renderDrops()
   {
     let dropModels: any[] = []
     for (var drop in this.state.drops){
@@ -226,15 +241,10 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
         }}
       />)
     }
-    return (
-      <entity>
-         {this.renderClouds(cloudType)}
-         {dropModels}
-      </entity>
-      )
+    return dropModels
   }
   
-  renderFlakes(cloudType:string)
+  renderFlakes()
   {
     let flakeModels: any[] = []
     for (var flake in this.state.flakes){
@@ -252,18 +262,30 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
         }}
       />)
     }
+    return flakeModels
+  }
+
+  renderLightNing(){
+    let lightningNum:number = Math.floor(Math.random()*25)
+    //lightningNum =+  Math.floor( (Math.random()*2 ) -1)
+    //lightningNum % 5
+    if (lightningNum>6)
+    {
+      return
+    }
     return (
-      <entity>
-         {this.renderClouds(cloudType)}
-         {flakeModels}
-      </entity>
-      )
+      <gltf-model 
+        src = {"models/ln" + lightningNum + ".gltf"}
+        position={{ x:5, y:8, z:5}}
+        scale={4}
+        />
+      )     
   }
 
   async render() {
     return (
       <scene>
-        {this.pickWeather()}
+        {this.renderWeather()}
         <gltf-model
           src="models/House.gltf"
           scale={0.04}
