@@ -328,7 +328,11 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   async render() {
     switch (this.state.weather) {
       case Weather.sun:
-        return this.renderHouse()
+        return (
+          <scene>
+            {this.renderHouse()}
+          </scene>
+             ) 
       case Weather.clouds:
         return (
           <scene>
