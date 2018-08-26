@@ -88,7 +88,7 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
         if (weather == this.state.weather) {
           return
         }
-        this.setState({ weather: weather })
+        this.setState({ weather: weather, drops: {}, flakes: {} })
         if (weather == (Weather.sun | Weather.clouds)) {
           return
         }
@@ -102,7 +102,6 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   mapWeather(weather: string) {
     let simpleWeather: Weather
     if (weather.match(/(thunder)/gi)) {
-      //// can we do this neater w/out so many ifs?
       simpleWeather = Weather.storm
     } else if (weather.match(/(snow|ice)/gi)) {
       simpleWeather = Weather.snow
@@ -332,43 +331,43 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
         return this.renderHouse()
       case Weather.clouds:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('white')}
             {this.renderHouse()}
-          </entity>
+          </scene>
              )
       case Weather.rain:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('white')}
             {this.renderDrops()}
             {this.renderHouse()}
-          </entity>
+          </scene>
         )
       case Weather.heavyRain:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('dark')}
             {this.renderDrops()}
             {this.renderHouse()}
-          </entity>
+          </scene>
         )
       case Weather.snow:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('dark')}
             {this.renderFlakes()}
             {this.renderHouse()}
-          </entity>
+          </scene>
         )
       case Weather.storm:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('dark')}
             {this.renderDrops()}
             {this.renderLightNing()}
             {this.renderHouse()}
-          </entity>
+          </scene>
         )
     }
   }
