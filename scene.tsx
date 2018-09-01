@@ -3,7 +3,7 @@ import { Vector3Component } from 'metaverse-api'
 const axios = require('axios')
 
 
-let fakeWeather: string | null = 'heavy rain'
+let fakeWeather: string | null = 'thunder rain'
 
 
 
@@ -328,50 +328,46 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   async render() {
     switch (this.state.weather) {
       case Weather.sun:
-        return (
-          <scene>
-            {this.renderHouse()}
-          </scene>
-             ) 
+        return this.renderHouse()
       case Weather.clouds:
         return (
-          <scene>
+          <entity>
             {this.renderClouds('white')}
             {this.renderHouse()}
-          </scene>
+          </entity>
              )
       case Weather.rain:
         return (
-          <scene>
+          <entity>
             {this.renderClouds('white')}
             {this.renderDrops()}
             {this.renderHouse()}
-          </scene>
+          </entity>
         )
       case Weather.heavyRain:
         return (
-          <scene>
+          <entity>
             {this.renderClouds('dark')}
             {this.renderDrops()}
             {this.renderHouse()}
-          </scene>
+          </entity>
         )
       case Weather.snow:
         return (
-          <scene>
+          <entity>
             {this.renderClouds('dark')}
             {this.renderFlakes()}
             {this.renderHouse()}
-          </scene>
+          </entity>
         )
       case Weather.storm:
         return (
-          <scene>
+          <entity>
             {this.renderClouds('dark')}
             {this.renderDrops()}
             {this.renderLightNing()}
             {this.renderHouse()}
-          </scene>
+          </entity>
         )
     }
   }
