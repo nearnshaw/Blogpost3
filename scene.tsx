@@ -1,9 +1,9 @@
-import * as DCL from 'metaverse-api'
-import { Vector3Component } from 'metaverse-api'
+import * as DCL from 'decentraland-api'
+import { Vector3Component } from 'decentraland-api'
 const axios = require('axios')
 
 
-let fakeWeather: string | null = 'thunder rain'
+let fakeWeather: string | null = 'heavy rain'
 
 
 
@@ -140,9 +140,9 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     let dropsAdded: Drops = {}
     for (let drop = 0; drop < drops; drop++) {
       let newDrop: Vector3Component = {
-        x: Math.random() * 10,
+        x: Math.random() * 9 + 0.5,
         y:9,
-        z: Math.random() * 10
+        z: Math.random() * 9 + 0.5
       }
       const dropName = 'drop' + objectCounter++
       dropsAdded[dropName] = [newDrop, false]
@@ -252,9 +252,10 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   renderDrops() {
     let dropModels: any[] = []
     dropModels.push(
-      <basic-material
+      <material
         id="drop"
-        texture="materials/nave.png"
+        albedoTexture="materials/nave.png"
+        hasAlpha
       />
     )
     for (var drop in this.state.drops) {
@@ -279,14 +280,20 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
 
   renderFlakes() {
     let flakeModels: any[] = []
+    flakeModels.push(
+      <basic-material
+        id="flake"
+        texture="materials/copo.png"
+      />
+    )
     for (var flake in this.state.flakes) {
       flakeModels.push(
-        <gltf-model
-          src="models/flake.gltf"
+        <plane
+          material="#flake"
           position={this.state.flakes[flake][0]}
           rotation={this.state.flakes[flake][1]}
           key={flake}
-          scale={1}
+          scale={0.15}
           visible={this.state.flakes[flake][2]}
           transition={
             this.state.flakes[flake][2]? {}:  
