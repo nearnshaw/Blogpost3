@@ -251,19 +251,26 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
 
   renderDrops() {
     let dropModels: any[] = []
+    dropModels.push(
+      <basic-material
+        id="drop"
+        texture="materials/nave.png"
+      />
+    )
     for (var drop in this.state.drops) {
       //console.log("rendering drop " + drop)
       dropModels.push(
-        <gltf-model
-          src="models/raindrop.gltf"
+        <plane
+          material="#drop"
           position={this.state.drops[drop][0]}
           key={drop}
-          scale={2}
+          scale={0.2}
           visible={this.state.drops[drop][1]}
           transition={
             this.state.drops[drop][1]? {}:  
             {position: { duration: dropSpeed, timing: 'linear' }}
           }
+          billboard={2}
         />
       )
     }
