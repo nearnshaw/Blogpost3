@@ -3,7 +3,7 @@ import { Vector3Component } from 'decentraland-api'
 const axios = require('axios')
 
 
-let fakeWeather: string | null = 'heavy rain'
+let fakeWeather: string | null = 'storm thunder'
 
 
 
@@ -122,13 +122,13 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   startPrecipitation() {
     switch (this.state.weather) {
       case Weather.storm:
-        this.startRain(30)
+        this.startRain(50)
         break
       case Weather.snow:
-        this.startSnow(50)
+        this.startSnow(75)
         break
       case Weather.heavyRain:
-        this.startRain(75)
+        this.startRain(100)
         break
       case Weather.rain:
         this.startRain(25)
@@ -140,9 +140,9 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     let dropsAdded: Drops = {}
     for (let drop = 0; drop < drops; drop++) {
       let newDrop: Vector3Component = {
-        x: Math.random() * 9 + 0.5,
+        x: (Math.random() * 9) + 0.5,
         y:9,
-        z: Math.random() * 9 + 0.5
+        z: (Math.random() * 9) + 0.5
       }
       const dropName = 'drop' + objectCounter++
       dropsAdded[dropName] = [newDrop, false]
@@ -163,9 +163,9 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     await sleep(dropSpeed) 
     dropsAdded = { ...this.state.drops }
     let newDrop: Vector3Component = {
-      x: Math.random() * 10,
+      x: (Math.random() * 9) + 0.5,
       y: 9,
-      z: Math.random() * 10
+      z: (Math.random() * 9) + 0.5
     }
     dropsAdded[drop] = [newDrop, false]
     this.setState({ drops: dropsAdded })
@@ -181,9 +181,9 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     let flakesAdded: Flakes = {}
     for (let flake = 0; flake < flakes; flake++) {
       let newFlakePos: Vector3Component = {
-        x: Math.random() * 10,
+        x: (Math.random() * 9) + 0.5,
         y: 9,
-        z: Math.random() * 10
+        z: (Math.random() * 9) + 0.5
       }
       let newFlakeRot: Vector3Component = {
         x: Math.random() * 360,
@@ -209,9 +209,9 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     await sleep(flakeSpeed) 
     flakesAdded = { ...this.state.flakes }
     let newFlakePos: Vector3Component = {
-      x: Math.random() * 10,
+      x: (Math.random() * 9) + 0.5,
       y: 9,
-      z: Math.random() * 10
+      z: (Math.random() * 9) + 0.5
     }
     let newFlakeRot: Vector3Component = {
       x: Math.random() * 360,
@@ -265,7 +265,7 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
           material="#drop"
           position={this.state.drops[drop][0]}
           key={drop}
-          scale={0.2}
+          scale={0.1}
           visible={this.state.drops[drop][1]}
           transition={
             this.state.drops[drop][1]? {}:  
@@ -342,46 +342,50 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   async render() {
     switch (this.state.weather) {
       case Weather.sun:
-        return this.renderHouse()
+      return (
+        <scene>
+          {this.renderHouse()}
+        </scene>
+           )
       case Weather.clouds:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('white')}
             {this.renderHouse()}
-          </entity>
+          </scene>
              )
       case Weather.rain:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('white')}
             {this.renderDrops()}
             {this.renderHouse()}
-          </entity>
+          </scene>
         )
       case Weather.heavyRain:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('dark')}
             {this.renderDrops()}
             {this.renderHouse()}
-          </entity>
+          </scene>
         )
       case Weather.snow:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('dark')}
             {this.renderFlakes()}
             {this.renderHouse()}
-          </entity>
+          </scene>
         )
       case Weather.storm:
         return (
-          <entity>
+          <scene>
             {this.renderClouds('dark')}
             {this.renderDrops()}
             {this.renderLightNing()}
             {this.renderHouse()}
-          </entity>
+          </scene>
         )
     }
   }
