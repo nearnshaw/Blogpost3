@@ -1,640 +1,472 @@
 {
-    "accessors": [
+    "accessors" : [
         {
-            "bufferView": 12,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 115,
-            "max": [
-                0.2608320116996765,
-                -0.051201000809669495,
-                -0.1260949969291687
+            "bufferView" : 0,
+            "componentType" : 5121,
+            "count" : 195,
+            "max" : [
+                134
             ],
-            "min": [
-                -0.24473799765110016,
-                -0.3109320104122162,
-                -1.519394040107727
+            "min" : [
+                0
             ],
-            "name": "accessor_buffer_lightning_bolt.005_POSITION_0",
-            "type": "VEC3"
+            "type" : "SCALAR"
         },
         {
-            "bufferView": 9,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 135,
-            "max": [
-                0.9957183599472046,
-                0.9873194694519043,
-                0.7728019952774048
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 135,
+            "max" : [
+                0.10688699781894684,
+                0.06421799957752228,
+                0.8936439752578735
             ],
-            "min": [
-                -0.885286271572113,
-                -0.9029562473297119,
-                -0.8598693609237671
+            "min" : [
+                -0.03850699961185455,
+                -0.6162959933280945,
+                -0.3007729947566986
             ],
-            "name": "accessor_buffer_lightning_bolt.004_NORMAL_0",
-            "type": "VEC3"
+            "type" : "VEC3"
         },
         {
-            "bufferView": 6,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 135,
-            "max": [
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 135,
+            "max" : [
+                0.9589526057243347,
+                0.9934080243110657,
+                0.8148747086524963
+            ],
+            "min" : [
+                -0.9504074454307556,
+                -0.8513443470001221,
+                -0.764854907989502
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 135,
+            "max" : [
+                0.993232250213623,
+                0.9261837005615234,
+                0.8342151045799255,
+                1.0
+            ],
+            "min" : [
+                -0.9960079193115234,
+                -0.951175332069397,
+                -0.8475410342216492,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 135,
+            "max" : [
                 0.9861000180244446,
                 0.9809000007808208
             ],
-            "min": [
+            "min" : [
                 0.13519999384880066,
                 0.020500004291534424
             ],
-            "name": "accessor_buffer_lightning_bolt.003_TEXCOORD_0_0",
-            "type": "VEC2"
+            "type" : "VEC2"
         },
         {
-            "bufferView": 2,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 175,
-            "max": [
-                0.9847999811172485,
-                0.9809000007808208
+            "bufferView" : 5,
+            "componentType" : 5121,
+            "count" : 165,
+            "max" : [
+                114
             ],
-            "min": [
-                0.04410000145435333,
-                0.014900028705596924
-            ],
-            "name": "accessor_buffer_lightning_bolt.002_TEXCOORD_0_0",
-            "type": "VEC2"
-        },
-        {
-            "bufferView": 0,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 175,
-            "max": [
-                0.6986939907073975,
-                0.14202000200748444,
-                0.8674049973487854
-            ],
-            "min": [
-                -0.0967859998345375,
-                -0.11033099889755249,
-                -0.9244449734687805
-            ],
-            "name": "accessor_buffer_lightning_bolt.002_POSITION_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 5,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 135,
-            "max": [
-                0.950414776802063,
-                0.9934322834014893,
-                0.764868974685669
-            ],
-            "min": [
-                -0.9589763283729553,
-                -0.8513692021369934,
-                -0.8148787021636963
-            ],
-            "name": "accessor_buffer_lightning_bolt.003_NORMAL_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 4,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 135,
-            "max": [
-                0.03850699961185455,
-                0.06421799957752228,
-                0.3007729947566986
-            ],
-            "min": [
-                -0.10688699781894684,
-                -0.6162959933280945,
-                -0.8936439752578735
-            ],
-            "name": "accessor_buffer_lightning_bolt.003_POSITION_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 11,
-            "byteOffset": 0,
-            "componentType": 5123,
-            "count": 195,
-            "max": [
-                134
-            ],
-            "min": [
+            "min" : [
                 0
             ],
-            "name": "accessor_buffer_lightning_bolt.004_0",
-            "type": "SCALAR"
+            "type" : "SCALAR"
         },
         {
-            "bufferView": 13,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 115,
-            "max": [
-                0.9905638694763184,
-                0.9766730070114136,
-                0.6698670983314514
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 115,
+            "max" : [
+                0.24473799765110016,
+                -0.051201000809669495,
+                1.519394040107727
             ],
-            "min": [
-                -0.8640365600585938,
-                -0.9308344721794128,
-                -0.761399507522583
+            "min" : [
+                -0.2608320116996765,
+                -0.3109320104122162,
+                0.1260949969291687
             ],
-            "name": "accessor_buffer_lightning_bolt.005_NORMAL_0",
-            "type": "VEC3"
+            "type" : "VEC3"
         },
         {
-            "bufferView": 7,
-            "byteOffset": 0,
-            "componentType": 5123,
-            "count": 195,
-            "max": [
-                134
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 115,
+            "max" : [
+                0.8640094995498657,
+                0.9766533374786377,
+                0.7613757848739624
             ],
-            "min": [
-                0
+            "min" : [
+                -0.9905392527580261,
+                -0.9308145642280579,
+                -0.669850766658783
             ],
-            "name": "accessor_buffer_lightning_bolt.003_0",
-            "type": "SCALAR"
+            "type" : "VEC3"
         },
         {
-            "bufferView": 14,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 115,
-            "max": [
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 115,
+            "max" : [
+                0.9648362398147583,
+                0.9952119588851929,
+                0.7609924077987671,
+                1.0
+            ],
+            "min" : [
+                -0.9759557843208313,
+                -0.9900444149971008,
+                -0.6569936275482178,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 115,
+            "max" : [
                 0.9848999977111816,
                 0.8675999939441681
             ],
-            "min": [
+            "min" : [
                 0.045499999076128006,
                 0.015500009059906006
             ],
-            "name": "accessor_buffer_lightning_bolt.005_TEXCOORD_0_0",
-            "type": "VEC2"
+            "type" : "VEC2"
         },
         {
-            "bufferView": 10,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 135,
-            "max": [
+            "bufferView" : 10,
+            "componentType" : 5121,
+            "count" : 195,
+            "max" : [
+                134
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5126,
+            "count" : 135,
+            "max" : [
+                0.24473699927330017,
+                0.12920799851417542,
+                1.3549929857254028
+            ],
+            "min" : [
+                -0.1496489942073822,
+                -0.27291300892829895,
+                -0.121069997549057
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 135,
+            "max" : [
+                0.8852809071540833,
+                0.9873042702674866,
+                0.8598589897155762
+            ],
+            "min" : [
+                -0.9956969022750854,
+                -0.9029511213302612,
+                -0.772789716720581
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 135,
+            "max" : [
+                0.9715747237205505,
+                0.9929758906364441,
+                0.7152323722839355,
+                1.0
+            ],
+            "min" : [
+                -0.9808472394943237,
+                -0.9919389486312866,
+                -0.8929948806762695,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 135,
+            "max" : [
                 0.9757000207901001,
                 0.9809000007808208
             ],
-            "min": [
+            "min" : [
                 0.18479999899864197,
                 0.03530001640319824
             ],
-            "name": "accessor_buffer_lightning_bolt.004_TEXCOORD_0_0",
-            "type": "VEC2"
-        },
-        {
-            "bufferView": 8,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 135,
-            "max": [
-                0.1496489942073822,
-                0.12920799851417542,
-                0.121069997549057
-            ],
-            "min": [
-                -0.24473699927330017,
-                -0.27291300892829895,
-                -1.3549929857254028
-            ],
-            "name": "accessor_buffer_lightning_bolt.004_POSITION_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 3,
-            "byteOffset": 0,
-            "componentType": 5123,
-            "count": 255,
-            "max": [
-                174
-            ],
-            "min": [
-                0
-            ],
-            "name": "accessor_buffer_lightning_bolt.002_0",
-            "type": "SCALAR"
-        },
-        {
-            "bufferView": 1,
-            "byteOffset": 0,
-            "componentType": 5126,
-            "count": 175,
-            "max": [
-                0.9914628267288208,
-                0.990665853023529,
-                0.7813616394996643
-            ],
-            "min": [
-                -0.9130062460899353,
-                -0.8980961441993713,
-                -0.6831281781196594
-            ],
-            "name": "accessor_buffer_lightning_bolt.002_NORMAL_0",
-            "type": "VEC3"
-        },
-        {
-            "bufferView": 15,
-            "byteOffset": 0,
-            "componentType": 5123,
-            "count": 165,
-            "max": [
-                114
-            ],
-            "min": [
-                0
-            ],
-            "name": "accessor_buffer_lightning_bolt.005_0",
-            "type": "SCALAR"
+            "type" : "VEC2"
         }
     ],
-    "asset": {
-        "copyright": "",
-        "generator": "blendergltf v1.2.0",
-        "version": "2.0"
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
     },
-    "bufferViews": [
+    "bufferViews" : [
         {
-            "buffer": 0,
-            "byteLength": 2100,
-            "byteOffset": 0,
-            "byteStride": 12,
-            "name": "bufferView_buffer_lightning_bolt.002_POSITION_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 195,
+            "byteOffset" : 0,
+            "target" : 34963
         },
         {
-            "buffer": 0,
-            "byteLength": 2100,
-            "byteOffset": 2100,
-            "byteStride": 12,
-            "name": "bufferView_buffer_lightning_bolt.002_NORMAL_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 1620,
+            "byteOffset" : 196,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 1400,
-            "byteOffset": 4200,
-            "byteStride": 8,
-            "name": "bufferView_buffer_lightning_bolt.002_TEXCOORD_0_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 1620,
+            "byteOffset" : 1816,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 512,
-            "byteOffset": 5600,
-            "name": "bufferView_buffer_lightning_bolt.002_0",
-            "target": 34963
+            "buffer" : 0,
+            "byteLength" : 2160,
+            "byteOffset" : 3436,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 1620,
-            "byteOffset": 6112,
-            "byteStride": 12,
-            "name": "bufferView_buffer_lightning_bolt.003_POSITION_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 1080,
+            "byteOffset" : 5596,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 1620,
-            "byteOffset": 7732,
-            "byteStride": 12,
-            "name": "bufferView_buffer_lightning_bolt.003_NORMAL_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 165,
+            "byteOffset" : 6676,
+            "target" : 34963
         },
         {
-            "buffer": 0,
-            "byteLength": 1080,
-            "byteOffset": 9352,
-            "byteStride": 8,
-            "name": "bufferView_buffer_lightning_bolt.003_TEXCOORD_0_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 1380,
+            "byteOffset" : 6844,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 392,
-            "byteOffset": 10432,
-            "name": "bufferView_buffer_lightning_bolt.003_0",
-            "target": 34963
+            "buffer" : 0,
+            "byteLength" : 1380,
+            "byteOffset" : 8224,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 1620,
-            "byteOffset": 10824,
-            "byteStride": 12,
-            "name": "bufferView_buffer_lightning_bolt.004_POSITION_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 1840,
+            "byteOffset" : 9604,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 1620,
-            "byteOffset": 12444,
-            "byteStride": 12,
-            "name": "bufferView_buffer_lightning_bolt.004_NORMAL_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 920,
+            "byteOffset" : 11444,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 1080,
-            "byteOffset": 14064,
-            "byteStride": 8,
-            "name": "bufferView_buffer_lightning_bolt.004_TEXCOORD_0_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 195,
+            "byteOffset" : 12364,
+            "target" : 34963
         },
         {
-            "buffer": 0,
-            "byteLength": 392,
-            "byteOffset": 15144,
-            "name": "bufferView_buffer_lightning_bolt.004_0",
-            "target": 34963
+            "buffer" : 0,
+            "byteLength" : 1620,
+            "byteOffset" : 12560,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 1380,
-            "byteOffset": 15536,
-            "byteStride": 12,
-            "name": "bufferView_buffer_lightning_bolt.005_POSITION_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 1620,
+            "byteOffset" : 14180,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 1380,
-            "byteOffset": 16916,
-            "byteStride": 12,
-            "name": "bufferView_buffer_lightning_bolt.005_NORMAL_0",
-            "target": 34962
+            "buffer" : 0,
+            "byteLength" : 2160,
+            "byteOffset" : 15800,
+            "target" : 34962
         },
         {
-            "buffer": 0,
-            "byteLength": 920,
-            "byteOffset": 18296,
-            "byteStride": 8,
-            "name": "bufferView_buffer_lightning_bolt.005_TEXCOORD_0_0",
-            "target": 34962
-        },
-        {
-            "buffer": 0,
-            "byteLength": 332,
-            "byteOffset": 19216,
-            "name": "bufferView_buffer_lightning_bolt.005_0",
-            "target": 34963
+            "buffer" : 0,
+            "byteLength" : 1080,
+            "byteOffset" : 17960,
+            "target" : 34962
         }
     ],
-    "buffers": [
+    "buffers" : [
         {
-            "byteLength": 19548,
-            "name": "buffer_ln5",
-            "uri": "buffer_ln5.bin"
+            "byteLength" : 19040,
+            "uri" : "ln5.bin"
         }
     ],
-    "cameras": [
+    "materials" : [
         {
-            "name": "Camera",
-            "perspective": {
-                "aspectRatio": 1.703595982340029,
-                "yfov": 0.5033799409866333,
-                "zfar": 100.0,
-                "znear": 0.10000000149011612
-            },
-            "type": "perspective"
-        }
-    ],
-    "materials": [
-        {
-            "alphaMode": "OPAQUE",
-            "doubleSided": false,
-            "emissiveFactor": [
-                0.5,
-                0.5,
-                0.5
+            "emissiveFactor" : [
+                2.8507919311523438,
+                3.0,
+                0.9996901452541351
             ],
-            "name": "light",
-            "pbrMetallicRoughness": {
-                "baseColorFactor": [
-                    0.64000004529953,
-                    0.568332850933075,
-                    0.08515936881303787,
+            "name" : "light",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.76384856655568,
+                    0.8038277626037598,
+                    0.2678595642522197,
                     1.0
                 ],
-                "metallicFactor": 0.0,
-                "roughnessFactor": 1.0
+                "metallicFactor" : 0.0
             }
         }
     ],
-    "meshes": [
+    "meshes" : [
         {
-            "name": "lightning_bolt.002",
-            "primitives": [
+            "name" : "lightning_bolt.003",
+            "primitives" : [
                 {
-                    "attributes": {
-                        "NORMAL": 14,
-                        "POSITION": 4,
-                        "TEXCOORD_0": 3
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
                     },
-                    "indices": 13,
-                    "material": 0,
-                    "mode": 4
+                    "indices" : 0,
+                    "material" : 0
                 }
             ]
         },
         {
-            "name": "lightning_bolt.003",
-            "primitives": [
+            "name" : "lightning_bolt.005",
+            "primitives" : [
                 {
-                    "attributes": {
-                        "NORMAL": 5,
-                        "POSITION": 6,
-                        "TEXCOORD_0": 2
+                    "attributes" : {
+                        "NORMAL" : 7,
+                        "POSITION" : 6,
+                        "TANGENT" : 8,
+                        "TEXCOORD_0" : 9
                     },
-                    "indices": 9,
-                    "material": 0,
-                    "mode": 4
+                    "indices" : 5,
+                    "material" : 0
                 }
             ]
         },
         {
-            "name": "lightning_bolt.004",
-            "primitives": [
+            "name" : "lightning_bolt.004",
+            "primitives" : [
                 {
-                    "attributes": {
-                        "NORMAL": 1,
-                        "POSITION": 12,
-                        "TEXCOORD_0": 11
+                    "attributes" : {
+                        "NORMAL" : 12,
+                        "POSITION" : 11,
+                        "TANGENT" : 13,
+                        "TEXCOORD_0" : 14
                     },
-                    "indices": 7,
-                    "material": 0,
-                    "mode": 4
-                }
-            ]
-        },
-        {
-            "name": "lightning_bolt.005",
-            "primitives": [
-                {
-                    "attributes": {
-                        "NORMAL": 8,
-                        "POSITION": 0,
-                        "TEXCOORD_0": 10
-                    },
-                    "indices": 15,
-                    "material": 0,
-                    "mode": 4
+                    "indices" : 10,
+                    "material" : 0
                 }
             ]
         }
     ],
-    "nodes": [
+    "nodes" : [
         {
-            "camera": 0,
-            "name": "Camera",
-            "rotation": [
-                -0.09062843769788742,
-                -0.8937962651252747,
-                -0.2099730223417282,
-                0.38578000664711
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
             ],
-            "scale": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "translation": [
-                -7.481131553649902,
+            "translation" : [
+                7.481131553649902,
                 5.34366512298584,
-                -6.5076398849487305
+                6.5076398849487305
             ]
         },
         {
-            "name": "Lamp",
-            "rotation": [
-                -0.34203386306762695,
-                -0.5232755541801453,
-                -0.2841663062572479,
-                0.7269423007965088
+            "name" : "Lamp",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558802962303162,
+                -0.27217137813568115,
+                0.570947527885437
             ],
-            "scale": [
+            "scale" : [
                 1.0,
                 1.0,
                 0.9999999403953552
             ],
-            "translation": [
-                -4.076245307922363,
+            "translation" : [
+                4.076245307922363,
                 5.903861999511719,
-                1.0054539442062378
+                -1.0054539442062378
             ]
         },
         {
-            "mesh": 0,
-            "name": "lightning_bolt.002",
-            "rotation": [
-                -0.7071068286895752,
+            "mesh" : 0,
+            "name" : "lightning_bolt.003",
+            "rotation" : [
+                0.7071068286895752,
                 0.0,
-                0.0,
+                -0.0,
                 0.7071067094802856
-            ],
-            "scale": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
             ]
         },
         {
-            "mesh": 1,
-            "name": "lightning_bolt.003",
-            "rotation": [
-                -0.7071068286895752,
+            "mesh" : 2,
+            "name" : "lightning_bolt.004",
+            "rotation" : [
+                0.7071068286895752,
                 0.0,
-                0.0,
+                -0.0,
                 0.7071067094802856
-            ],
-            "scale": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
             ]
         },
         {
-            "mesh": 2,
-            "name": "lightning_bolt.004",
-            "rotation": [
-                -0.7071068286895752,
+            "mesh" : 1,
+            "name" : "lightning_bolt.005",
+            "rotation" : [
+                0.7071068286895752,
                 0.0,
-                0.0,
+                -0.0,
                 0.7071067094802856
-            ],
-            "scale": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        {
-            "mesh": 3,
-            "name": "lightning_bolt.005",
-            "rotation": [
-                -0.7071068286895752,
-                0.0,
-                0.0,
-                0.7071067094802856
-            ],
-            "scale": [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
             ]
         }
     ],
-    "scene": 0,
-    "scenes": [
+    "scene" : 0,
+    "scenes" : [
         {
-            "extras": {
-                "active_camera": 0,
-                "background_color": [
-                    0.05087608844041824,
-                    0.05087608844041824,
-                    0.05087608844041824
-                ],
-                "frames_per_second": 24
-            },
-            "name": "Scene",
-            "nodes": [
-                5,
+            "name" : "Scene",
+            "nodes" : [
                 4,
                 3,
                 2,

@@ -2,10 +2,7 @@ import * as DCL from 'decentraland-api'
 import { Vector3Component } from 'decentraland-api'
 const axios = require('axios')
 
-
-let fakeWeather: string | null = 'thunder'
-
-
+let fakeWeather: string | null = 'heavy rain'
 
 // temp
 //let dropsUp: number = 0
@@ -32,7 +29,7 @@ const callUrl: string =
   APIkey
 
 export function sleep(ms: number = 0) {
-  return new Promise(r => setTimeout(r, ms));
+  return new Promise(r => setTimeout(r, ms))
 }
 
 export enum Weather {
@@ -77,24 +74,25 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     if (fakeWeather) {
       weather = this.mapWeather(fakeWeather)
     } else {
+      console.log('getting weather from API')
       axios
         .get(callUrl)
         .then((response: any) => {
           console.log(response.data.wx_desc)
           weather = this.mapWeather(response.data.wx_desc)
-          if (weather == this.state.weather) {
-            return
-          }
-          this.setState({ weather: weather, drops: {}, flakes: {} })
-          if (weather == (Weather.sun | Weather.clouds)) {
-            return
-          }
-          this.startPrecipitation()
         })
         .catch((error: any) => {
           console.log(error)
         })
     }
+    if (weather == this.state.weather) {
+      return
+    }
+    this.setState({ weather: weather, drops: {}, flakes: {} })
+    if (weather == (Weather.sun | Weather.clouds)) {
+      return
+    }
+    this.startPrecipitation()
   }
 
   mapWeather(weather: string) {
@@ -120,10 +118,10 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   startPrecipitation() {
     switch (this.state.weather) {
       case Weather.storm:
-        this.startRain(50)
+        this.startRain(40)
         break
       case Weather.snow:
-        this.startSnow(75)
+        this.startSnow(100)
         break
       case Weather.heavyRain:
         this.startRain(100)
@@ -138,9 +136,9 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     let dropsAdded: Drops = {}
     for (let drop = 0; drop < drops; drop++) {
       let newDrop: Vector3Component = {
-        x: (Math.random() * 9) + 0.5,
-        y:9,
-        z: (Math.random() * 9) + 0.5
+        x: Math.random() * 9 + 0.5,
+        y: 9,
+        z: Math.random() * 9 + 0.5
       }
       const dropName = 'drop' + objectCounter++
       dropsAdded[dropName] = [newDrop, false]
@@ -148,8 +146,8 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     this.setState({ drops: dropsAdded })
     for (let drop in this.state.drops) {
       this.updateDrop(drop)
-      await sleep(dropSpeed/drops )
-    }    
+      await sleep(dropSpeed / drops)
+    }
   }
 
   async updateDrop(drop: string) {
@@ -158,75 +156,79 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     dropsAdded[drop][1] = true
     this.setState({ drops: dropsAdded })
 
-    await sleep(dropSpeed) 
+    await sleep(dropSpeed)
     dropsAdded = { ...this.state.drops }
     let newDrop: Vector3Component = {
-      x: (Math.random() * 9) + 0.5,
+      x: Math.random() * 9 + 0.5,
       y: 9,
-      z: (Math.random() * 9) + 0.5
+      z: Math.random() * 9 + 0.5
     }
     dropsAdded[drop] = [newDrop, false]
     this.setState({ drops: dropsAdded })
-    await sleep(10) 
-    if (this.state.weather == Weather.storm || Weather.rain || Weather.heavyRain)
-    {
+    await sleep(10)
+    if (
+      this.state.weather == Weather.storm ||
+      Weather.rain ||
+      Weather.heavyRain
+    ) {
       this.updateDrop(drop)
-    } 
+    }
   }
-
 
   async startSnow(flakes: number) {
     let flakesAdded: Flakes = {}
     for (let flake = 0; flake < flakes; flake++) {
       let newFlakePos: Vector3Component = {
-        x: (Math.random() * 9) + 0.5,
+        x: Math.random() * 9 + 0.5,
         y: 9,
-        z: (Math.random() * 9) + 0.5
+        z: Math.random() * 9 + 0.5
       }
       let newFlakeRot: Vector3Component = {
         x: Math.random() * 360,
         y: Math.random() * 360,
         z: Math.random() * 360
       }
-      let flakeType = "#flake" + Math.ceil(Math.random()*20)
+      let flakeType = '#flake' + Math.ceil(Math.random() * 20)
       const flakeName = 'flake' + objectCounter++
       flakesAdded[flakeName] = [newFlakePos, newFlakeRot, flakeType, false]
     }
     this.setState({ flakes: flakesAdded })
     for (let flake in this.state.flakes) {
       this.updateFlake(flake)
-      await sleep(flakeSpeed/flakes )
-    }    
+      await sleep(flakeSpeed / flakes)
+    }
   }
 
   async updateFlake(flake: string) {
     let flakesAdded: Flakes = { ...this.state.flakes }
     flakesAdded[flake][0].y = -1
+    flakesAdded[flake][1] = {
+      x: Math.random() * 360,
+      y: Math.random() * 360,
+      z: Math.random() * 360
+    }
     flakesAdded[flake][3] = true
     this.setState({ flakes: flakesAdded })
-
-    await sleep(flakeSpeed) 
+    await sleep(flakeSpeed)
     flakesAdded = { ...this.state.flakes }
     let newFlakePos: Vector3Component = {
-      x: (Math.random() * 9) + 0.5,
+      x: Math.random() * 9 + 0.5,
       y: 9,
-      z: (Math.random() * 9) + 0.5
+      z: Math.random() * 9 + 0.5
     }
     let newFlakeRot: Vector3Component = {
       x: Math.random() * 360,
       y: Math.random() * 360,
       z: Math.random() * 360
     }
-    let flakeType = "#flake" + Math.ceil(Math.random()*20)
+    let flakeType = '#flake' + Math.ceil(Math.random() * 20)
     flakesAdded[flake] = [newFlakePos, newFlakeRot, flakeType, false]
     this.setState({ flakes: flakesAdded })
-    await sleep(10) 
-    if (this.state.weather == Weather.snow)
-    {
+    await sleep(10)
+    if (this.state.weather == Weather.snow) {
       this.updateFlake(flake)
-    } 
+    }
   }
-
 
   renderClouds(cloudType: string) {
     switch (cloudType) {
@@ -241,7 +243,7 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
       case 'white':
         return (
           <gltf-model
-            src={'models/clouds/clouds.gltf'}
+            src={'models/clouds.gltf'}
             position={{ x: 9, y: 4, z: 1 }}
             scale={3.5}
           />
@@ -252,11 +254,7 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
   renderDrops() {
     let dropModels: any[] = []
     dropModels.push(
-      <material
-        id="drop"
-        albedoTexture="materials/drop.png"
-        hasAlpha
-      />
+      <material id="drop" albedoTexture="materials/drop.png" hasAlpha />
     )
     for (var drop in this.state.drops) {
       //console.log("rendering drop " + drop)
@@ -269,8 +267,9 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
           position={this.state.drops[drop][0]}
           visible={this.state.drops[drop][1]}
           transition={
-            this.state.drops[drop][1]? {}:  
-            {position: { duration: dropSpeed, timing: 'linear' }}
+            this.state.drops[drop][1]
+              ? {}
+              : { position: { duration: dropSpeed, timing: 'linear' } }
           }
         />
       )
@@ -280,12 +279,11 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
 
   renderFlakes() {
     let flakeModels: any[] = []
-    for (let i = 1; i <= 20; i ++)
-    {
+    for (let i = 1; i <= 20; i++) {
       flakeModels.push(
         <basic-material
-          id={"flake" + i}
-          texture={"materials/flake" + i + ".png"}
+          id={'flake' + i}
+          texture={'materials/flake' + i + '.png'}
         />
       )
     }
@@ -293,16 +291,18 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
       flakeModels.push(
         <plane
           key={flake}
-          scale={0.25}
+          scale={0.2}
           position={this.state.flakes[flake][0]}
           rotation={this.state.flakes[flake][1]}
           material={this.state.flakes[flake][2]}
           visible={this.state.flakes[flake][3]}
           transition={
-            this.state.flakes[flake][3]? {}:  
-            {position: { duration: flakeSpeed, timing: 'linear' },
-            rotation: { duration: flakeSpeed, timing: 'linear' }
-            } 
+            this.state.flakes[flake][3]
+              ? {}
+              : {
+                  position: { duration: flakeSpeed, timing: 'linear' },
+                  rotation: { duration: flakeSpeed, timing: 'linear' }
+                }
           }
         />
       )
@@ -324,37 +324,41 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
     )
   }
 
- renderHouse() {
+  renderHouse(water: string) {
+    let houseModel: string = ''
+    switch (water) {
+      case 'dry':
+        houseModel = 'models/house_dry.gltf'
+        break
+      case 'wet':
+        houseModel = 'models/house_wet.gltf'
+        break
+      case 'snow':
+        houseModel = 'models/house_snow.gltf'
+        break
+    }
     return (
-      <gltf-model
-        src="models/House.gltf"
-        scale={1}
-        position={{ x: 5, y: 0, z: 5 }}
-      />
+      <gltf-model src={houseModel} scale={1} position={{ x: 5, y: 0, z: 5 }} />
     )
   }
 
   async render() {
     switch (this.state.weather) {
       case Weather.sun:
-      return (
-        <scene>
-          {this.renderHouse()}
-        </scene>
-           )
+        return <scene>{this.renderHouse('dry')}</scene>
       case Weather.clouds:
         return (
           <scene>
             {this.renderClouds('white')}
-            {this.renderHouse()}
+            {this.renderHouse('dry')}
           </scene>
-             )
+        )
       case Weather.rain:
         return (
           <scene>
             {this.renderClouds('white')}
             {this.renderDrops()}
-            {this.renderHouse()}
+            {this.renderHouse('dry')}
           </scene>
         )
       case Weather.heavyRain:
@@ -362,7 +366,7 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
           <scene>
             {this.renderClouds('dark')}
             {this.renderDrops()}
-            {this.renderHouse()}
+            {this.renderHouse('wet')}
           </scene>
         )
       case Weather.snow:
@@ -370,7 +374,7 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
           <scene>
             {this.renderClouds('dark')}
             {this.renderFlakes()}
-            {this.renderHouse()}
+            {this.renderHouse('snow')}
           </scene>
         )
       case Weather.storm:
@@ -379,13 +383,11 @@ export default class HouseScene extends DCL.ScriptableScene<any, IState> {
             {this.renderClouds('dark')}
             {this.renderDrops()}
             {this.renderLightNing()}
-            {this.renderHouse()}
+            {this.renderHouse('wet')}
           </scene>
         )
     }
   }
 }
-
-
 
 //http://api.weatherunlocked.com/api/current/-34.55,%20-58.46?app_id=bb6063b3&app_key=2e55a43d3e62d76f145f28aa7e3990e9
